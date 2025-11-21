@@ -1,0 +1,1527 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | M. Makgetha Attorneys Inc.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles (same as original) */
+        :root {
+            --primary-gold: #cda670;
+            --dark-gold: #b8945a;
+            --medium-gold: #d4b78a;
+            --light-gold: #e0d7cb;
+            --accent-blue: #223849;
+            --light-blue: #1b3942;
+            --white: #ffffff;
+            --light-bg: #f5f7fa;
+            --medium-bg: #e8ecf2;
+            --dark-text: #1a1a1a;
+            --text: #333333;
+            --light-text: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Crimson Text', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--primary-gold);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-gold);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            margin-top: 15px;
+        }
+        
+        .section-title.centered {
+            text-align: center;
+        }
+        
+        .section-title.centered h2::after {
+            margin: 15px auto 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--medium-gold));
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(205, 166, 112, 0.2);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, var(--medium-gold), var(--primary-gold));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(205, 166, 112, 0.3);
+        }
+        
+        .btn-blue {
+            background: linear-gradient(135deg, var(--accent-blue), var(--light-blue));
+            color: var(--white);
+        }
+        
+        .btn-blue:hover {
+            background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+            box-shadow: 0 10px 20px rgba(34, 56, 73, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-gold);
+            color: var(--white);
+        }
+        
+        /* Header Styles */
+        header {
+            height: 70vh;
+            background: linear-gradient(rgba(34, 56, 73, 0.9), rgba(34, 56, 73, 0.9)), 
+                        url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background-color: var(--accent-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav.scrolled {
+            padding: 15px 5%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 2px solid var(--primary-gold);
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(205, 166, 112, 0.2);
+            /* Square corners for logo */
+            border-radius: 0;
+        }
+        
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text span {
+            color: var(--white);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 40px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+        
+        .page-hero {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 5%;
+        }
+        
+        .page-hero-content {
+            flex: 1;
+            max-width: 800px;
+            animation: fadeInLeft 1.2s ease;
+        }
+        
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .page-hero-content h1 span {
+            color: var(--primary-gold);
+        }
+        
+        .page-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--white);
+            line-height: 1.8;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--light-gold);
+        }
+        
+        .breadcrumb a {
+            color: var(--light-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+        
+        /* Services Page Specific Styles */
+        .services-overview {
+            background-color: var(--light-bg);
+            position: relative;
+        }
+        
+        .services-overview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .services-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            border-top: 4px solid var(--accent-blue);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-icon {
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--medium-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .service-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+        
+        .service-icon i {
+            color: var(--white);
+            font-size: 2.5rem;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-gold);
+        }
+        
+        .service-content p {
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-gold);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .service-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        .service-detail {
+            background-color: var(--white);
+        }
+        
+        .service-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--medium-bg);
+        }
+        
+        .service-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-tab.active {
+            color: var(--primary-gold);
+        }
+        
+        .service-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-gold);
+        }
+        
+        .service-tab:hover {
+            color: var(--primary-gold);
+        }
+        
+        .service-tab-content {
+            display: none;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .service-tab-content.active {
+            display: block;
+        }
+        
+        .service-detail-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        
+        .service-detail-text {
+            flex: 2;
+        }
+        
+        .service-detail-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-gold);
+        }
+        
+        .service-detail-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .service-features {
+            margin: 30px 0;
+        }
+        
+        .service-features h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+        }
+        
+        .service-features ul {
+            list-style-type: none;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+        
+        .service-detail-image {
+            flex: 1;
+            /* Square corners for service detail images */
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            /* Consistent sizing for all service detail images */
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+            /* Square corners for all images */
+            border-radius: 0;
+        }
+        
+        .service-detail-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .process-section {
+            background-color: var(--light-bg);
+            position: relative;
+        }
+        
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            opacity: 0.03;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-gold);
+            opacity: 0.3;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--medium-gold));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(205, 166, 112, 0.3);
+        }
+        
+        .step-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-gold);
+        }
+        
+        .step-content p {
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--accent-blue), var(--light-blue));
+            color: var(--white);
+            padding: 70px 0 25px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-about {
+            max-width: 400px;
+        }
+        
+        .footer-logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            color: var(--primary-gold);
+        }
+        
+        .footer-logo span {
+            color: var(--white);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: var(--light-gold);
+        }
+        
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--primary-gold);
+            position: relative;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-gold);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--light-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gold);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .service-detail-content {
+                gap: 30px;
+            }
+            
+            .footer-content {
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .page-hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            
+            .service-detail-content {
+                flex-direction: column;
+            }
+            
+            .service-detail-image {
+                order: -1;
+                margin-bottom: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--accent-blue);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                transition: left 0.4s ease;
+                z-index: 999;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 0 30px 0;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .service-tabs {
+                flex-direction: column;
+            }
+            
+            .service-tab {
+                text-align: left;
+                border-bottom: 1px solid var(--medium-bg);
+            }
+            
+            .service-tab.active::after {
+                display: none;
+            }
+            
+            .service-detail-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .service-detail-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav id="navbar">
+            <a href="home.html" class="logo-container">
+                <img src="images/logo.jpg" alt="M. Makgetha Attorneys Inc. Logo" class="logo-image">
+                <div class="logo-text">M. Makgetha <span>Attorneys Inc.</span></div>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="page-hero">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                     
+                </div>
+                <h1>Our <span>Legal Services</span></h1>
+                <p>Comprehensive legal solutions tailored to your specific needs. Our experienced team provides expert guidance across various legal disciplines.</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/27795823164?text=Hi%20Makgetha%20Attorneys!%20I%20need%20more%20info%20about%20Makgetha%20Attorneys%20https://mmakgethaattorneys.com/" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Services Overview Section -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="services-content">
+                <div class="section-title centered">
+                    <h2>Our Legal Services</h2>
+                    <p>Comprehensive legal solutions tailored to your specific needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-heart-broken"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Divorce Matters</h3>
+                            <p>Professional legal assistance for divorce proceedings, including contested and uncontested divorces, settlement agreements, and child custody arrangements.</p>
+                            <a href="#divorce" class="service-link tab-link" data-tab="divorce">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Maintenance Matters</h3>
+                            <p>Expert guidance on spousal and child maintenance issues, ensuring fair and appropriate financial support arrangements.</p>
+                            <a href="#maintenance" class="service-link tab-link" data-tab="maintenance">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Civil Matters</h3>
+                            <p>Representation in civil disputes, contract matters, and commercial litigation to protect your rights and interests.</p>
+                            <a href="#civil" class="service-link tab-link" data-tab="civil">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Domestic Violence</h3>
+                            <p>Legal protection and support for victims of domestic violence, including obtaining protection orders and related legal remedies.</p>
+                            <a href="#domestic" class="service-link tab-link" data-tab="domestic">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Harassment Matters</h3>
+                            <p>Legal assistance for victims of harassment, including workplace harassment and stalking, with appropriate legal remedies.</p>
+                            <a href="#harassment" class="service-link tab-link" data-tab="harassment">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-monument"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Deceased Estate Matters</h3>
+                            <p>Comprehensive assistance with estate administration, wills, trusts, and probate matters to ensure proper distribution of assets.</p>
+                            <a href="#estate" class="service-link tab-link" data-tab="estate">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Road Accident Matters</h3>
+                            <p>Legal representation for victims of road accidents, including claims for compensation and dealing with insurance companies.</p>
+                            <a href="#accident" class="service-link tab-link" data-tab="accident">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-handcuffs"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Unlawful Arrests Matters</h3>
+                            <p>Legal defense and representation for individuals who have been unlawfully arrested or detained, protecting their constitutional rights.</p>
+                            <a href="#arrest" class="service-link tab-link" data-tab="arrest">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Immigration Matters</h3>
+                            <p>Assistance with visa applications, residency permits, citizenship matters, and other immigration-related legal issues.</p>
+                            <a href="#immigration" class="service-link tab-link" data-tab="immigration">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Criminal Matters</h3>
+                            <p>Aggressive representation for criminal cases to protect your rights and achieve the best possible outcome in court proceedings.</p>
+                            <a href="#criminal" class="service-link tab-link" data-tab="criminal">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Detail Section -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="section-title centered">
+                <h2>Service Details</h2>
+                <p>Learn more about our specialized legal services</p>
+            </div>
+            
+            <div class="service-tabs">
+                <button class="service-tab active" data-tab="divorce">Divorce Matters</button>
+                <button class="service-tab" data-tab="maintenance">Maintenance Matters</button>
+                <button class="service-tab" data-tab="civil">Civil Matters</button>
+                <button class="service-tab" data-tab="domestic">Domestic Violence</button>
+                <button class="service-tab" data-tab="harassment">Harassment Matters</button>
+                <button class="service-tab" data-tab="estate">Deceased Estate Matters</button>
+                <button class="service-tab" data-tab="accident">Road Accident Matters</button>
+                <button class="service-tab" data-tab="arrest">Unlawful Arrests</button>
+                <button class="service-tab" data-tab="immigration">Immigration Matters</button>
+                <button class="service-tab" data-tab="criminal">Criminal Matters</button>
+            </div>
+            
+            <div class="service-tab-content active" id="divorce-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Divorce Matters</h3>
+                        <p>Our firm provides comprehensive legal assistance for all aspects of divorce proceedings. We understand that divorce can be emotionally challenging, and we strive to make the legal process as smooth as possible while protecting your rights and interests.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our divorce services include:</h4>
+                            <ul>
+                                <li>Contested and uncontested divorce proceedings</li>
+                                <li>Mediation and settlement negotiations</li>
+                                <li>Division of assets and liabilities</li>
+                                <li>Child custody and visitation arrangements</li>
+                                <li>Spousal and child support matters</li>
+                                <li>Prenuptial and postnuptial agreements</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We approach each divorce case with sensitivity and professionalism, working to achieve fair outcomes while minimizing conflict. Our goal is to help you navigate this difficult transition with dignity and clarity about your legal rights.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/divorce.jpg" alt="Divorce Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="maintenance-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Maintenance Matters</h3>
+                        <p>We provide expert legal guidance on maintenance issues, ensuring that financial support arrangements are fair, appropriate, and legally enforceable. Our team helps clients navigate the complexities of maintenance claims and modifications.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our maintenance services include:</h4>
+                            <ul>
+                                <li>Child support calculations and enforcement</li>
+                                <li>Spousal maintenance claims and modifications</li>
+                                <li>Enforcement of maintenance orders</li>
+                                <li>Defense against unjust maintenance claims</li>
+                                <li>Modification of existing maintenance orders</li>
+                                <li>Arrearage calculations and payment plans</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We work diligently to ensure that maintenance arrangements reflect the financial realities of all parties involved while prioritizing the well-being of any children affected by the arrangement.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/maintenance.jpg" alt="Maintenance Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="civil-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Civil Matters</h3>
+                        <p>Our firm handles a wide range of civil litigation matters, representing clients in disputes involving contracts, property, business relationships, and other civil issues. We provide strategic counsel to protect your rights and achieve favorable outcomes.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our civil litigation services include:</h4>
+                            <ul>
+                                <li>Contract disputes and breach of contract claims</li>
+                                <li>Property disputes and boundary issues</li>
+                                <li>Debt collection and recovery matters</li>
+                                <li>Commercial and business litigation</li>
+                                <li>Landlord-tenant disputes</li>
+                                <li>Professional negligence claims</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We approach civil litigation with a focus on achieving efficient and cost-effective resolutions, whether through negotiation, mediation, or courtroom representation when necessary.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/civil.jpeg" alt="Civil Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="domestic-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Domestic Violence</h3>
+                        <p>We provide compassionate and effective legal assistance to victims of domestic violence, helping them obtain protection and secure their safety. Our approach prioritizes the well-being of our clients while pursuing legal remedies.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our domestic violence services include:</h4>
+                            <ul>
+                                <li>Obtaining protection orders and interdicts</li>
+                                <li>Assistance with criminal charges against perpetrators</li>
+                                <li>Safety planning and risk assessment</li>
+                                <li>Legal representation in related family law matters</li>
+                                <li>Referrals to support services and shelters</li>
+                                <li>Enforcement of existing protection orders</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We understand the sensitive nature of domestic violence cases and provide a supportive environment where clients can feel safe while we work to protect their legal rights and personal safety.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/domestic.jpg" alt="Domestic Violence">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="harassment-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Harassment Matters</h3>
+                        <p>Our firm provides legal assistance to individuals experiencing various forms of harassment, including workplace harassment, stalking, and cyberbullying. We help clients understand their rights and pursue appropriate legal remedies.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our harassment services include:</h4>
+                            <ul>
+                                <li>Workplace harassment claims and representation</li>
+                                <li>Obtaining protection orders against stalkers</li>
+                                <li>Cyberbullying and online harassment matters</li>
+                                <li>Sexual harassment claims and litigation</li>
+                                <li>Assistance with criminal charges for harassment</li>
+                                <li>Representation in related employment disputes</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We take harassment claims seriously and work diligently to protect our clients from further harm while pursuing legal accountability for perpetrators.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/harassment.png" alt="Harassment Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="estate-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Deceased Estate Matters</h3>
+                        <p>We provide comprehensive legal assistance for all matters related to deceased estates, ensuring that the wishes of the deceased are honored and that estate administration proceeds smoothly and efficiently.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our deceased estate services include:</h4>
+                            <ul>
+                                <li>Estate administration and executorship services</li>
+                                <li>Will drafting and estate planning</li>
+                                <li>Probate and estate registration</li>
+                                <li>Distribution of assets to beneficiaries</li>
+                                <li>Estate accounting and tax compliance</li>
+                                <li>Disputes over wills and estate distribution</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We understand that dealing with a deceased estate can be emotionally challenging, and we provide compassionate guidance while ensuring all legal requirements are met efficiently.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/estate.jpeg" alt="Deceased Estate Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="accident-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Road Accident Matters</h3>
+                        <p>We provide legal representation for victims of road accidents, helping them navigate the complex process of claiming compensation for injuries, vehicle damage, and other losses resulting from accidents.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our road accident services include:</h4>
+                            <ul>
+                                <li>Claims against the Road Accident Fund</li>
+                                <li>Negotiations with insurance companies</li>
+                                <li>Personal injury claims and litigation</li>
+                                <li>Vehicle damage and repair claims</li>
+                                <li>Wrongful death claims</li>
+                                <li>Assistance with medical examinations and reports</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We understand the physical, emotional, and financial challenges that follow a road accident, and we work diligently to secure fair compensation for our clients while they focus on recovery.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/accident.png" alt="Road Accident Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="arrest-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Unlawful Arrests Matters</h3>
+                        <p>We provide legal defense and representation for individuals who have been unlawfully arrested or detained, protecting their constitutional rights and seeking remedies for violations of their legal protections.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our unlawful arrest services include:</h4>
+                            <ul>
+                                <li>Challenging unlawful arrests and detentions</li>
+                                <li>Bail applications and representation</li>
+                                <li>Civil claims for wrongful arrest and detention</li>
+                                <li>Defense against criminal charges arising from arrests</li>
+                                <li>Constitutional rights violations claims</li>
+                                <li>Police misconduct and brutality claims</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We are committed to protecting the constitutional rights of individuals and holding law enforcement accountable when they exceed their authority or violate legal procedures.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/unlawful.jpg" alt="Unlawful Arrests Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="immigration-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Immigration Matters</h3>
+                        <p>We provide comprehensive legal assistance for all immigration-related matters, helping clients navigate the complex requirements of South African immigration law and procedures.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our immigration services include:</h4>
+                            <ul>
+                                <li>Visa applications and renewals</li>
+                                <li>Permanent residency applications</li>
+                                <li>Citizenship and naturalization applications</li>
+                                <li>Work permits and business visas</li>
+                                <li>Appeals against visa refusals</li>
+                                <li>Deportation defense and related matters</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We stay current with changing immigration laws and policies to provide our clients with accurate advice and effective representation in all immigration matters.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/immigration.jpg" alt="Immigration Matters">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-tab-content" id="criminal-tab">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Criminal Matters</h3>
+                        <p>We provide aggressive and strategic representation for clients facing criminal charges, protecting their rights and working to achieve the best possible outcomes in criminal proceedings.</p>
+                        
+                        <div class="service-features">
+                            <h4>Our criminal defense services include:</h4>
+                            <ul>
+                                <li>Bail applications and representation</li>
+                                <li>Pre-trial negotiations and plea bargaining</li>
+                                <li>Trial representation in criminal courts</li>
+                                <li>Appeals against convictions and sentences</li>
+                                <li>Expungement of criminal records</li>
+                                <li>Representation in specialized courts</li>
+                            </ul>
+                        </div>
+                        
+                        <p>We approach each criminal case with a thorough understanding of the law and a commitment to protecting our clients' rights throughout the legal process, from investigation to trial and beyond.</p>
+                        
+                        <a href="contact.html" class="btn">Schedule Consultation</a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="images/criminal.jpg" alt="Criminal Matters">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title centered">
+                <h2>Our Process</h2>
+                <p>How we work with clients to achieve successful outcomes</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Initial Consultation</h3>
+                        <p>We begin with a comprehensive consultation to understand your legal needs, objectives, and the specifics of your situation.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Case Evaluation</h3>
+                        <p>Our team conducts a thorough analysis of your case, identifying key legal issues and developing a strategic approach.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Strategy Development</h3>
+                        <p>We create a customized legal strategy tailored to your specific circumstances and desired outcomes.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Execution & Representation</h3>
+                        <p>We implement the legal strategy through negotiation, mediation, or litigation, providing strong representation at every stage.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Resolution & Follow-up</h3>
+                        <p>We work toward a favorable resolution and provide necessary follow-up to ensure the outcome is properly implemented.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">M. Makgetha <span>Attorneys Inc.</span></div>
+                    <p>M. Makgetha Attorneys Inc. offers comprehensive legal solutions tailored to your specific needs. Our firm provides trusted legal counsel and unwavering support to clients across various legal disciplines.</p>
+                    <p>Legal Services · Divorce Matters · Maintenance Matters · Civil Matters · Domestic Violence · Harassment Matters · Deceased Estate Matters · Road Accident Matters · Unlawful Arrests Matters · Immigration Matters · Criminal Matters</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                         
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Divorce Matters</a></li>
+                        <li><a href="services.html">Maintenance Matters</a></li>
+                        <li><a href="services.html">Civil Matters</a></li>
+                        <li><a href="services.html">Domestic Violence</a></li>
+                        <li><a href="services.html">Harassment Matters</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 M. Makgetha Attorneys Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Service tabs functionality
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const serviceTabContents = document.querySelectorAll('.service-tab-content');
+        const tabLinks = document.querySelectorAll('.tab-link');
+        
+        function activateTab(tabId) {
+            // Remove active class from all tabs and contents
+            serviceTabs.forEach(tab => tab.classList.remove('active'));
+            serviceTabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to selected tab and content
+            document.querySelector(`.service-tab[data-tab="${tabId}"]`).classList.add('active');
+            document.getElementById(`${tabId}-tab`).classList.add('active');
+        }
+        
+        // Add click event to service tabs
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                activateTab(tabId);
+            });
+        });
+        
+        // Add click event to service card links
+        tabLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+                activateTab(tabId);
+                
+                // Scroll to service detail section
+                document.querySelector('.service-detail').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        const animatedElements = document.querySelectorAll('.service-card, .process-step, .service-detail-content');
+        
+        animatedElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
