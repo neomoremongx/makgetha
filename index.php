@@ -1,15 +1,11 @@
    <?php
 // Simple PHP router
 $request = $_SERVER['REQUEST_URI'];
-$base_path = '/Makgetha';
+
 
 // Remove query string and get clean path
 $path = parse_url($request, PHP_URL_PATH);
 
-// Remove base path if present
-if (strpos($path, $base_path) === 0) {
-    $path = substr($path, strlen($base_path));
-}
 
 // Ensure path starts with /
 if ($path === '') {
