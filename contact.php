@@ -172,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div style="font-family: Georgia, serif; color: #cda670; font-size: 1.2rem; margin-top: 0; margin-bottom: 15px;">Your Consultation Summary</div>
                             <p style="margin: 8px 0;"><strong>Service Needed:</strong> ' . htmlspecialchars($service) . '</p>
                             <p style="margin: 8px 0;"><strong>Contact Phone:</strong> ' . htmlspecialchars($phone) . '</p>
-                            <p style="margin: 8px 0;"><strong>Submitted:</strong> ' . date('F j, Y \a\t g:i A') . '</p>
+                            
                         </div>
                         
                         <!-- Response Time -->
@@ -186,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p style="margin: 8px 0;"><strong>Address:</strong> 136 Peter Mokaba Avenue, Potchefstroom, 2520</p>
                             <p style="margin: 8px 0;"><strong>Phone:</strong> 079 582 3164 | 018 294 5174 | 018 011 9464</p>
                             <p style="margin: 8px 0;"><strong>Email:</strong> mmattorneyslaw@telkomsa.net | info@mmakgethaattorneys.com</p>
-                            <p style="margin: 8px 0;"><strong>Business Hours:</strong> Monday - Friday: 8:00 AM - 5:00 PM | Saturday: By Appointment</p>
+                            <p style="margin: 8px 0;"><strong>Business Hours:</strong> Monday - Friday: 8:00 AM - 4:30 PM</p>
                         </div>
                         
                         <p style="margin-bottom: 20px;">For urgent legal matters, please feel free to call us directly at <strong>079 582 3164</strong>.</p>
@@ -236,7 +236,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // If not a POST request, redirect to contact page
-    header("Location: /Makgetha/contact");
+    header("Location: /contact");
     exit;
 }
+
 ?>
